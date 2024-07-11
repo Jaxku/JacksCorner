@@ -19,6 +19,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column; /* Allows stacking of elements vertically */
+            overflow: hidden; /* Prevents scrolling */
         }
 
         .overlay {
@@ -101,6 +102,14 @@
             0% { left: -100%; }
             100% { left: 100%; }
         }
+
+        /* Bouncing GIF styling */
+        .bouncing-gif {
+            position: absolute;
+            z-index: 0; /* Behind text but in front of background */
+            width: 100px; 
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -116,10 +125,47 @@
         <div class="made-in-nz">
             <span style="font-size: 12px;">Made with Love or lust... in NZ.</span>
             <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
-			<a href="https://github.com/Jaxku/JacksCorner/tree/main" target="_blank">
-            <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/Animated-GitHub-Logo.gif" width="60" height="auto" alt="GitHub Logo">
-        </a>
+            <a href="https://github.com/Jaxku/JacksCorner/tree/main" target="_blank">
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/Animated-GitHub-Logo.gif" width="60" height="auto" alt="GitHub Logo">
+            </a>
         </div>
     </footer>
+    <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Assets/FlyingJackInSpace.gif?raw=true" class="bouncing-gif" id="bouncingGif" alt="Bouncing GIF">
+
+    <script>
+		const gif = document.getElementById('bouncingGif');
+        let posX = 100, posY = 100;
+        let velX = 200, velY = 200; // Speed in pixels per second
+        let lastTime = performance.now();
+
+        function updatePosition(timestamp) {
+            const deltaTime = (timestamp - lastTime) / 4000; // Convert to seconds
+            lastTime = timestamp;
+
+            posX += velX * deltaTime;
+            posY += velY * deltaTime;
+
+            const rect = gif.getBoundingClientRect();
+            if (posX + rect.width >= window.innerWidth || posX <= 0) {
+                velX *= -1;
+                posX = Math.max(0, Math.min(window.innerWidth - rect.width, posX));
+            }
+            if (posY + rect.height >= window.innerHeight || posY <= 0) {
+                velY *= -1;
+                posY = Math.max(0, Math.min(window.innerHeight - rect.height, posY));
+            }
+
+            gif.style.left = posX + 'px';
+            gif.style.top = posY + 'px';
+
+            requestAnimationFrame(updatePosition);
+        }
+
+        gif.style.position = 'absolute';
+        gif.style.left = posX + 'px';
+        gif.style.top = posY + 'px';
+
+        requestAnimationFrame(updatePosition);
+    </script>
 </body>
 </html>

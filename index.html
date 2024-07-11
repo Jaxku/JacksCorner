@@ -11,14 +11,17 @@
             font-family: 'Comic Sans MS', sans-serif;
             background-color: #000;
             color: lightyellow;
+            min-height: 100vh;
+            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Backdrops/starstwinkle.gif?raw=true') repeat;
+            background-size: auto;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ensure body fills at least viewport height */
-            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Backdrops/starstwinkle.gif?raw=true') repeat;
-            background-size: auto;
-            position: relative; /* Ensure footer stays at the bottom */
+            flex-direction: column; /* Allows stacking of elements vertically */
+            overflow: hidden; /* Prevents scrolling */
         }
+
         .overlay {
             position: absolute;
             top: 0;
@@ -29,60 +32,187 @@
             background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true') no-repeat center center fixed;
             background-size: 270px 270px;
         }
+
         .container {
             text-align: center;
             position: relative;
             z-index: 1;
             padding-bottom: 60px; /* Adjust padding to make space for footer */
         }
+
         .logo {
             width: 200px;
             height: auto;
             margin-bottom: 20px;
         }
+
         .text {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
         .text.bold-red {
-            color: red; /* Sets the color to red */
-            font-weight: bold; /* Makes the text bold*/
+            color: red;
+            font-weight: bold;
         }
+
         .credits {
             margin-top: 40px;
             font-size: 12px;
             color: #999;
         }
+
         .footer {
             position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: #333; /* Dark background color for footer */
-            color: #fff; /* White text color */
-            text-align: center; /* Center align text */
-            padding: 10px 0; /* Padding for top and bottom */
+            background-color: #008080;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
         }
+
         .footer h6 {
-            margin: 0; /* Remove default margin for h6 */
+            margin: 0;
+            display: inline-block;
+        }
+
+        .made-in-nz {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .made-in-nz span {
+            margin-right: 10px;
+        }
+
+        /* Flying text animation */
+        .flying-text {
+            position: fixed;
+            top: 10px;
+            left: -100%;
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+            animation: flyAcross 10s linear infinite;
+        }
+
+        @keyframes flyAcross {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Bouncing GIF styling */
+        .bouncing-gif {
+            position: absolute;
+            z-index: 0; /* Behind text but in front of background */
+            width: 100px; 
+            height: auto;
+        }
+
+        /* Smaller GIF styling */
+        .smaller-gif {
+            width: 50px; /* Adjust the width as needed */
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
+    <div class="flying-text">Welcome to Jack's Corner!</div>
     <div class="container">
         <p class="text bold-red">Jacks Corner</p> 
         <p class="text">Under Construction</p>
-		<p class="credits">Website coming soon or is it?..</p>
+        <p class="credits">Website coming soon!</p>
     </div>
-<footer class="footer">
-    <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
-    <div class="made-in-nz">
-        <span style="font-size: 12px;">Made with Love in NZ.</span><br>
-        <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
-		<img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/MadeWithMacOS.gif?raw=true" width="88" height="31" alt="Made with MacOS Symbol">
-    </div>
-</footer>
+    <footer class="footer">
+        <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
+        <div class="made-in-nz">
+            <span style="font-size: 12px;">Made with Love or lust... in NZ.</span>
+            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
+            <a href="https://github.com/Jaxku/JacksCorner/tree/main" target="_blank">
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/Animated-GitHub-Logo.gif" width="60" height="auto" alt="GitHub Logo">
+            </a>
+        </div>
+    </footer>
+    
+    <!-- First Bouncing GIF -->
+    <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Assets/FlyingJackInSpace.gif?raw=true" class="bouncing-gif" id="bouncingGif1" alt="Bouncing GIF">
 
+    <!-- Second Bouncing GIF with smaller size -->
+    <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/FlyingPoop.gif" class="bouncing-gif smaller-gif" id="bouncingGif2" alt="Bouncing GIF">
 
+    <script>
+        // First bouncing GIF
+        const gif1 = document.getElementById('bouncingGif1');
+        let posX1 = 900, posY1 = 900;
+        let velX1 = 200, velY1 = 200; // Speed in pixels per second
+        let lastTime1 = performance.now();
+
+        function updatePosition1(timestamp) {
+            const deltaTime1 = (timestamp - lastTime1) / 4000; // Convert to seconds
+            lastTime1 = timestamp;
+
+            posX1 += velX1 * deltaTime1;
+            posY1 += velY1 * deltaTime1;
+
+            const rect1 = gif1.getBoundingClientRect();
+            if (posX1 + rect1.width >= window.innerWidth || posX1 <= 0) {
+                velX1 *= -1;
+                posX1 = Math.max(0, Math.min(window.innerWidth - rect1.width, posX1));
+            }
+            if (posY1 + rect1.height >= window.innerHeight || posY1 <= 0) {
+                velY1 *= -1;
+                posY1 = Math.max(0, Math.min(window.innerHeight - rect1.height, posY1));
+            }
+
+            gif1.style.left = posX1 + 'px';
+            gif1.style.top = posY1 + 'px';
+
+            requestAnimationFrame(updatePosition1);
+        }
+
+        gif1.style.position = 'absolute';
+        gif1.style.left = posX1 + 'px';
+        gif1.style.top = posY1 + 'px';
+
+        requestAnimationFrame(updatePosition1);
+
+        // Second bouncing GIF
+        const gif2 = document.getElementById('bouncingGif2');
+        let posX2 = 200, posY2 = 200;
+        let velX2 = 200, velY2 = 200; // Speed in pixels per second
+        let lastTime2 = performance.now();
+
+        function updatePosition2(timestamp) {
+            const deltaTime2 = (timestamp - lastTime2) / 3500; // Convert to seconds
+            lastTime2 = timestamp;
+
+            posX2 += velX2 * deltaTime2;
+            posY2 += velY2 * deltaTime2;
+
+            const rect2 = gif2.getBoundingClientRect();
+            if (posX2 + rect2.width >= window.innerWidth || posX2 <= 0) {
+                velX2 *= -1;
+                posX2 = Math.max(0, Math.min(window.innerWidth - rect2.width, posX2));
+            }
+            if (posY2 + rect2.height >= window.innerHeight || posY2 <= 0) {
+                velY2 *= -1;
+                posY2 = Math.max(0, Math.min(window.innerHeight - rect2.height, posY2));
+            }
+
+            gif2.style.left = posX2 + 'px';
+            gif2.style.top = posY2 + 'px';
+
+            requestAnimationFrame(updatePosition2);
+        }
+
+        gif2.style.position = 'absolute';
+        gif2.style.left = posX2 + 'px';
+        gif2.style.top = posY2 + 'px';
+
+        requestAnimationFrame(updatePosition2);
+    </script>
 </body>
 </html>

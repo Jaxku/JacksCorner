@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #000;
+            color: lightyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body fills at least viewport height */
+            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Backdrops/starstwinkle.gif?raw=true') repeat;
+            background-size: auto;
+            position: relative; /* Ensure footer stays at the bottom */
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true') no-repeat center center fixed;
+            background-size: 270px 270px;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 60px; /* Adjust padding to make space for footer */
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .text.bold-red {
+            color: red; /* Sets the color to red */
+            font-weight: bold; /* Makes the text bold*/
+        }
+        .credits {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #333; /* Dark background color for footer */
+            color: #fff; /* White text color */
+            text-align: center; /* Center align text */
+            padding: 10px 0; /* Padding for top and bottom */
+        }
+        .footer h6 {
+            margin: 0; /* Remove default margin for h6 */
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <p class="text bold-red">Jacks Corner</p> 
+        <p class="text">Under Construction</p>
+		<p class="credits">Website coming soon or is it?..</p>
+    </div>
+<footer class="footer">
+    <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
+    <div class="made-in-nz">
+        <span style="font-size: 12px;">Made with Love in NZ.</span><br>
+        <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
+		<img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/MadeWithMacOS.gif?raw=true" width="88" height="31" alt="Made with MacOS Symbol">
+    </div>
+</footer>
+
+
+</body>
+</html>

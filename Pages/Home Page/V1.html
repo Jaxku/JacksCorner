@@ -16,8 +16,6 @@
             background-size: auto;
             position: relative;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column; /* Allows stacking of elements vertically */
             overflow: hidden; /* Prevents scrolling */
         }
@@ -33,11 +31,55 @@
             background-size: 270px 270px;
         }
 
+        .header-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: 20px; /* Adjust the padding for spacing */
+            box-sizing: border-box;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #008080; /* Optional: Add a semi-transparent background */
+            padding: 10px; /* Add padding inside the header */
+        }
+
+        .header img {
+            width: 40px; /* Adjust the size of the spinning globe */
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header .text {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            margin-right: 20px; /* Add some space between text and links */
+        }
+
+        .header nav a {
+            color: lightyellow;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+
         .container {
             text-align: center;
             position: relative;
             z-index: 1;
             padding-bottom: 60px; /* Adjust padding to make space for footer */
+            margin-top: 80px; /* Adjust margin to avoid overlapping with header */
         }
 
         .logo {
@@ -90,7 +132,7 @@
         /* Flying text animation */
         .flying-text {
             position: fixed;
-            top: 10px;
+            top: 55px;
             left: -100%;
             font-size: 30px;
             font-weight: bold;
@@ -120,12 +162,24 @@
 </head>
 <body>
     <div class="overlay"></div>
-    <div class="flying-text">Welcome to Jack's Corner!</div>
+    
+    <div class="header-wrapper">
+        <header class="header">
+            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Spinning Globe">
+            <div class="text">Jack's World</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+    </div>
+
     <div class="container">
         <p class="text bold-red">Jacks Corner</p> 
-        <p class="text">Under Construction</p>
-        <p class="credits">Website coming soon!</p>
+        <p class="credits">Beaming across the net at 2/3 speed of light</p>
     </div>
+    <div class="flying-text">Welcome to Jack's Corner!</div>
     <footer class="footer">
         <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
         <div class="made-in-nz">
@@ -137,7 +191,7 @@
         </div>
     </footer>
     
-    <!-- First Bouncing GIF -->
+    <!-- First Bouncing GIF -->    
     <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Assets/FlyingJackInSpace.gif?raw=true" class="bouncing-gif" id="bouncingGif1" alt="Bouncing GIF">
 
     <!-- Second Bouncing GIF with smaller size -->

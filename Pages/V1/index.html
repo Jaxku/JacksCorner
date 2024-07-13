@@ -20,21 +20,10 @@
             overflow: hidden;
         }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true') no-repeat center center fixed;
-            background-size: 270px 270px;
-        }
-
         .header-wrapper {
             width: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
@@ -57,10 +46,11 @@
         }
 
         .header .text {
-            font-size: 24px;
+            font-size: 32px; /* Increased font size */
             font-weight: bold;
+            color: #ff00ff; /* Vibrant color for 'J' */
             margin-right: 10px;
-            color: #00ffff; /* Vibrant color for 'J' */
+            text-transform: uppercase;
         }
 
         .header .text span {
@@ -83,21 +73,39 @@
         }
 
         .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            position: relative;
             z-index: 1;
-            padding-bottom: 60px;
-            margin-top: 80px;
+            padding-bottom: 40px;
+            margin: 0;
+        }
+
+        .Globe_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0; /* Behind the .container */
+            pointer-events: none; /* Prevents the globe from blocking mouse events */
+        }
+
+        .Globe_container img {
+            width: 300px; /* Adjust size as needed */
+            height: 300px;
         }
 
         .text.bold-red {
+            font-size: 24px; /* Increased font size */
             color: red;
             font-weight: bold;
         }
 
         .credits {
-            margin-top: 40px;
-            font-size: 12px;
+            margin-top: 20px; /* Adjusted margin */
+            font-size: 16px; /* Increased font size */
             color: #999;
         }
 
@@ -114,6 +122,7 @@
         .footer h6 {
             margin: 0;
             display: inline-block;
+            font-size: 14px; /* Increased font size */
         }
 
         .made-in-nz {
@@ -124,22 +133,38 @@
 
         .made-in-nz span {
             margin-right: 10px;
+            font-size: 12px; /* Increased font size */
         }
 
-        .flying-text {
-            position: fixed;
-            top: 95px;
-            left: -100%;
-            font-size: 30px;
-            font-weight: bold;
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide overflowing text */
-        }
+		.flying-text {
+			position: fixed;
+			top: 95px;
+			left: -100%;
+			font-size: 30px;
+			font-weight: bold;
+			color: #ff00ff; /* Initial color (pink) */
+			animation: flyAcross 10s linear infinite, colorChange 3s infinite; /* Combining two animations */
+		}
 
-        @keyframes flyAcross {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
+		@keyframes flyAcross {
+			0% { left: -100%; }
+			100% { left: 100%; }
+		}
+
+		@keyframes colorChange {
+			0%, 100% { color: #ff00ff; } /* Pink */
+			16.67% { color: #00ffff; } /* Cyan */
+			33.33% { color: #ffff00; } /* Yellow */
+			50% { color: #ff0000; } /* Red */
+			66.67% { color: #00ff00; } /* Green */
+			83.33% { color: #0000ff; } /* Blue */
+		}
+
+
+				@keyframes flyAcross {
+					0% { left: -100%; }
+					100% { left: 100%; }
+				}
 
         .bouncing-gif {
             position: absolute;
@@ -165,29 +190,34 @@
     </style>
 </head>
 <body>
+    <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/CoolCHICKEN.gif" width="171" height="163" alt=""/>
     <div class="overlay"></div>
     
     <div class="header-wrapper">
         <header class="header">
             <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Spinning Globe">
-            <div class="text">Jack's World</div>
+            <div class="text">
+                <span>j</span><span>a</span><span>c</span><span>k</span><span>'</span><span>s</span>
+                <span> </span><span>C</span><span>o</span><span>r</span><span>n</span><span>e</span><span>r</span>
+            </div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+				<div class="credits">     </div>
+                <a href="index.html" style="color: palegreen;"> Home </a>
+                <a href="about.html" style="color: hotpink;"> About </a>
+                <a href="contact.html" style="color: purple;"> Contact </a>
             </nav>
         </header>
+    </div>
+    
+    <div class="flying-text">Welcome to Jack's Corner!</div>
+	
+    <div class="Globe_container">
+        <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Globe">
     </div>
 
     <div class="container">
         <p class="text bold-red">Jacks Corner</p> 
         <p class="credits">Beaming across the net at 2/3 speed of light</p>
-    </div>
-    
-    <div class="flying-text">
-        <span class="vibrant-color-1">W</span><span class="vibrant-color-2">e</span><span class="vibrant-color-3">l</span><span class="vibrant-color-4">c</span><span class="vibrant-color-5">o</span><span class="vibrant-color-6">m</span><span class="vibrant-color-1">e</span>
-        <span class="vibrant-color-2"> </span><span class="vibrant-color-3">t</span><span class="vibrant-color-4">o</span><span class="vibrant-color-5"> </span><span class="vibrant-color-6">J</span><span class="vibrant-color-1">a</span><span class="vibrant-color-2">c</span><span class="vibrant-color-3">k</span><span class="vibrant-color-4">'</span><span class="vibrant-color-5">s</span>
-        <span class="vibrant-color-6"> </span><span class="vibrant-color-1">C</span><span class="vibrant-color-2">o</span><span class="vibrant-color-3">r</span><span class="vibrant-color-4">n</span><span class="vibrant-color-5">e</span><span class="vibrant-color-6">r</span><span class="vibrant-color-1">!</span>
     </div>
 
     <footer class="footer">
@@ -242,6 +272,7 @@
 
         // Second bouncing GIF
         const gif2 = document.getElementById('bouncingGif2');
+
         let posX2 = 200, posY2 = 200;
         let velX2 = 200, velY2 = 200;
         let lastTime2 = performance.now();

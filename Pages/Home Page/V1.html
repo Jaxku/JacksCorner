@@ -16,8 +16,8 @@
             background-size: auto;
             position: relative;
             display: flex;
-            flex-direction: column; /* Allows stacking of elements vertically */
-            overflow: hidden; /* Prevents scrolling */
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .overlay {
@@ -34,9 +34,9 @@
         .header-wrapper {
             width: 100%;
             display: flex;
-            justify-content: left;
+            justify-content: flex-start;
             align-items: center;
-            padding: 20px; /* Adjust the padding for spacing */
+            padding: 20px;
             box-sizing: border-box;
             z-index: 2;
             position: absolute;
@@ -47,27 +47,35 @@
         .header {
             display: flex;
             align-items: center;
-            background-color: #008080; /* Optional: Add a semi-transparent background */
-            padding: 10px; /* Add padding inside the header */
+            padding: 10px;
         }
 
         .header img {
-            width: 40px; /* Adjust the size of the spinning globe */
+            width: 40px;
             height: 40px;
             margin-right: 10px;
         }
 
         .header .text {
             font-size: 24px;
-            color: red;
             font-weight: bold;
-            margin-right: 20px; /* Add some space between text and links */
+            margin-right: 10px;
+            color: #00ffff; /* Vibrant color for 'J' */
+        }
+
+        .header .text span {
+            display: inline-block;
+            animation: colorChange 3s infinite; /* Animation for vibrant colors */
+        }
+
+        .header nav {
+            display: flex;
+            gap: 10px;
         }
 
         .header nav a {
             color: lightyellow;
             text-decoration: none;
-            margin-right: 10px;
         }
 
         .header nav a:hover {
@@ -78,19 +86,8 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            padding-bottom: 60px; /* Adjust padding to make space for footer */
-            margin-top: 80px; /* Adjust margin to avoid overlapping with header */
-        }
-
-        .logo {
-            width: 200px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .text {
-            font-size: 24px;
-            margin-bottom: 20px;
+            padding-bottom: 60px;
+            margin-top: 80px;
         }
 
         .text.bold-red {
@@ -129,15 +126,14 @@
             margin-right: 10px;
         }
 
-        /* Flying text animation */
         .flying-text {
             position: fixed;
-            top: 55px;
+            top: 95px;
             left: -100%;
             font-size: 30px;
             font-weight: bold;
-            color: red;
-            animation: flyAcross 10s linear infinite;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflowing text */
         }
 
         @keyframes flyAcross {
@@ -145,18 +141,26 @@
             100% { left: 100%; }
         }
 
-        /* Bouncing GIF styling */
         .bouncing-gif {
             position: absolute;
-            z-index: 0; /* Behind text but in front of background */
-            width: 100px; 
+            z-index: 0;
+            width: 100px;
             height: auto;
         }
 
-        /* Smaller GIF styling */
         .smaller-gif {
-            width: 50px; /* Adjust the width as needed */
+            width: 50px;
             height: auto;
+        }
+
+        /* Define vibrant colors for the 90s web era */
+        @keyframes colorChange {
+            0%, 100% { color: #ff00ff; } /* Pink */
+            16.67% { color: #00ffff; } /* Cyan */
+            33.33% { color: #ffff00; } /* Yellow */
+            50% { color: #ff0000; } /* Red */
+            66.67% { color: #00ff00; } /* Green */
+            83.33% { color: #0000ff; } /* Blue */
         }
     </style>
 </head>
@@ -179,7 +183,13 @@
         <p class="text bold-red">Jacks Corner</p> 
         <p class="credits">Beaming across the net at 2/3 speed of light</p>
     </div>
-    <div class="flying-text">Welcome to Jack's Corner!</div>
+    
+    <div class="flying-text">
+        <span class="vibrant-color-1">W</span><span class="vibrant-color-2">e</span><span class="vibrant-color-3">l</span><span class="vibrant-color-4">c</span><span class="vibrant-color-5">o</span><span class="vibrant-color-6">m</span><span class="vibrant-color-1">e</span>
+        <span class="vibrant-color-2"> </span><span class="vibrant-color-3">t</span><span class="vibrant-color-4">o</span><span class="vibrant-color-5"> </span><span class="vibrant-color-6">J</span><span class="vibrant-color-1">a</span><span class="vibrant-color-2">c</span><span class="vibrant-color-3">k</span><span class="vibrant-color-4">'</span><span class="vibrant-color-5">s</span>
+        <span class="vibrant-color-6"> </span><span class="vibrant-color-1">C</span><span class="vibrant-color-2">o</span><span class="vibrant-color-3">r</span><span class="vibrant-color-4">n</span><span class="vibrant-color-5">e</span><span class="vibrant-color-6">r</span><span class="vibrant-color-1">!</span>
+    </div>
+
     <footer class="footer">
         <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
         <div class="made-in-nz">
@@ -191,21 +201,18 @@
         </div>
     </footer>
     
-    <!-- First Bouncing GIF -->    
     <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Assets/FlyingJackInSpace.gif?raw=true" class="bouncing-gif" id="bouncingGif1" alt="Bouncing GIF">
-
-    <!-- Second Bouncing GIF with smaller size -->
     <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/FlyingPoop.gif" class="bouncing-gif smaller-gif" id="bouncingGif2" alt="Bouncing GIF">
 
     <script>
         // First bouncing GIF
         const gif1 = document.getElementById('bouncingGif1');
         let posX1 = 900, posY1 = 900;
-        let velX1 = 200, velY1 = 200; // Speed in pixels per second
+        let velX1 = 200, velY1 = 200;
         let lastTime1 = performance.now();
 
         function updatePosition1(timestamp) {
-            const deltaTime1 = (timestamp - lastTime1) / 4000; // Convert to seconds
+            const deltaTime1 = (timestamp - lastTime1) / 4000;
             lastTime1 = timestamp;
 
             posX1 += velX1 * deltaTime1;
@@ -236,11 +243,11 @@
         // Second bouncing GIF
         const gif2 = document.getElementById('bouncingGif2');
         let posX2 = 200, posY2 = 200;
-        let velX2 = 200, velY2 = 200; // Speed in pixels per second
+        let velX2 = 200, velY2 = 200;
         let lastTime2 = performance.now();
 
         function updatePosition2(timestamp) {
-            const deltaTime2 = (timestamp - lastTime2) / 3500; // Convert to seconds
+            const deltaTime2 = (timestamp - lastTime2) / 3500;
             lastTime2 = timestamp;
 
             posX2 += velX2 * deltaTime2;

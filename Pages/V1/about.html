@@ -190,6 +190,16 @@
             text-align: left;
             color: lightyellow;
         }
+		#gif-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+		
+    #gif-container img {
+      max-width: 100%;
+      height: auto;
+    }
 
         .about-section h2 {
 	font-size: 36px;
@@ -233,12 +243,28 @@
 		<h2>About Site:</h2>
 	<p>This site serves no purpose, infact I would call it a waste of space, bandwidth and a domain but hey it definitely looks rad, and I thank you for visiting this corner of the net (the fact you stumbled upon this page is an achievement)</p>
         <h2>About Me?!:</h2>
-    <p>Wait you want to know about me… Me??!? Why! I am average as fuck!!</p>
-        <p>
-          <label for="textfield">Tell me a little about you:</label>
-          <input type="text" name="textfield" id="textfield">
-          <input type="submit" name="submit" id="submit" value="Submit">
-        </p>
+    <p>Wait you want to know about me… Me??!? Why! I am boring and average as fuck!!</p>
+	<form id="myForm">
+		<p>
+		  <label for="textfield">Tell me a little about you:</label>
+		  <input type="text" name="textfield" id="textfield">
+		  <input type="submit" name="submit" id="submit" value="Submit">
+		</p>
+	  </form>
+
+  <div id="gif-container">
+    <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/cool.gif" alt="Cool GIF" width="200">
+	  <p>Wow! What REALLY!!!!!! WOW! thats cool.</p>
+  </div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Display the GIF
+      document.getElementById('gif-container').style.display = 'block';
+    });
+  </script>
 </div>
 
 <footer class="footer">

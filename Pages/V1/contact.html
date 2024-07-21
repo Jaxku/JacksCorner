@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #000;
+            color: lightyellow;
+            min-height: 100vh;
+            background: url('https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Backdrops/starstwinkle.gif?raw=true') repeat;
+            background-size: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header .text {
+            font-size: 32px; /* Increased font size */
+            font-weight: bold;
+            color: #ff00ff; /* Vibrant color for 'J' */
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        .header .text span {
+            display: inline-block;
+            animation: colorChange 3s infinite; /* Animation for vibrant colors */
+        }
+
+        .header nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header nav a {
+            color: lightyellow;
+            text-decoration: none;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+            padding-bottom: 40px;
+            margin: 0;
+        }
+
+        .Globe_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0; /* Behind the .container */
+            pointer-events: none; /* Prevents the globe from blocking mouse events */
+        }
+
+        .Globe_container img {
+            width: 300px; /* Adjust size as needed */
+            height: 300px;
+        }
+
+        .text.bold-red {
+            font-size: 24px; /* Increased font size */
+            color: red;
+            font-weight: bold;
+        }
+
+        .credits {
+            margin-top: 20px; /* Adjusted margin */
+            font-size: 16px; /* Increased font size */
+            color: #999;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #008080;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer h6 {
+            margin: 0;
+            display: inline-block;
+            font-size: 14px; /* Increased font size */
+        }
+
+        .made-in-nz {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .made-in-nz span {
+            margin-right: 10px;
+            font-size: 12px; /* Increased font size */
+        }
+
+        .flying-text {
+            position: fixed;
+            top: 95px;
+            left: -100%;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ff00ff; /* Initial color (pink) */
+            animation: flyAcross 10s linear infinite, colorChange 3s infinite; /* Combining two animations */
+        }
+
+        @keyframes flyAcross {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes colorChange {
+            0%, 100% { color: #ff00ff; } /* Pink */
+            16.67% { color: #00ffff; } /* Cyan */
+            33.33% { color: #ffff00; } /* Yellow */
+            50% { color: #ff0000; } /* Red */
+            66.67% { color: #00ff00; } /* Green */
+            83.33% { color: #0000ff; } /* Blue */
+        }
+
+        .left-middle {
+            position: absolute;
+            top: 40%;
+            left: 2%;
+            transform: translateY(-50%);
+        }
+
+        .right-middle {
+            position: absolute;
+            top: 40%;
+            right: 2%;
+            transform: translateY(-50%);
+        }
+
+        .right-banner {
+            position: absolute;
+            top: 17%;
+            right: 2%;
+            transform: translateY(-50%);
+        }
+
+        .about-section {
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            transform: translateY(-50%);
+            width: 60%;
+            text-align: left;
+            color: lightyellow;
+        }
+		#gif-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+		
+    #gif-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+        .about-section h2 {
+	font-size: 36px;
+	color: #7100ED;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            color: lightyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <img class="right-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Fish.gif" width="150" height="45" alt=""/>    
+    <img class="left-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/CoolCHICKEN.gif" width="171" height="163" alt=""/>
+    <div class="header-wrapper">
+        <header class="header">
+            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Spinning Globe">
+            <div class="text">
+                <span>j</span><span>a</span><span>c</span><span>k</span><span>'</span><span>s</span>
+                <span> </span><span>C</span><span>o</span><span>r</span><span>n</span><span>e</span><span>r</span>
+            </div>
+            <nav>
+                <div class="credits">     </div>
+                <a href="index.html" style="color: palegreen;"> Home </a>
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/DancingCow.gif" width=auto height=auto alt="Dancing Cow"/>
+                <a href="about.html" style="color: hotpink;"> About </a>
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/dancingconure.gif" width=auto height=auto alt="Dancing Birb"/>
+                <a href="contact.html" style="color: purple;"> Contact </a>
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/hamster2.gif" width=auto height=auto alt="Spinning hamster"/>
+                <img class="right-banner" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/seagull.gif" width=auto height=auto alt="Crazy Seagull Flying"/>
+            </nav>
+        </header>
+    </div>
+    
+    <div class="flying-text">Welcome to Jack's Corner!</div>
+    
+
+<div class="about-section">
+		<h2>Contact Me: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/SpinningAnimal.gif" alt="GIF Symbol" width="20" height="20"></h6></h2>
+	<p>No, don't contact me. :) </p>
+
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Display the GIF
+      document.getElementById('gif-container').style.display = 'block';
+    });
+  </script>
+</div>
+
+<footer class="footer">
+        <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
+        <div class="made-in-nz">
+            <span style="font-size: 12px;">Made with Love or lust... in NZ.</span>
+            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
+            <a href="https://github.com/Jaxku/JacksCorner/tree/main" target="_blank">
+                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/Animated-GitHub-Logo.gif" width="60" height="auto" alt="GitHub Logo">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

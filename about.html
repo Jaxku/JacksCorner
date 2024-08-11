@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="icon" href="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/favicon.png" sizes="128x128">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <style>
+<style>
         body {
             margin: 0;
             padding: 0;
@@ -29,15 +24,21 @@
             padding: 20px;
             box-sizing: border-box;
             z-index: 2;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
+			background: transparent;
         }
+		
+		.body-content {
+ 		 margin-top: 50px;
+		}
 
         .header {
             display: flex;
             align-items: center;
             padding: 10px;
+			background: transparent;
         }
 
         .header img {
@@ -212,12 +213,41 @@
             color: lightyellow;
         }
 
+        /* Internal CSS for Scrollable Section */
+        .scrollable {
+            overflow-y: auto; /* Only vertical scroll */
+            max-height: 500px; /* Limits the height but allows content to grow until this limit */
+            padding-right: 15px; /* Adds padding to avoid content overlapping with the scrollbar */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle inner shadow for better visual distinction */
+            scrollbar-width: thin; /* Firefox scrollbar width */
+            scrollbar-color: #7100ED purple; /* Custom scrollbar colors for Firefox */
+        }
+
+        /* Webkit Browsers (Chrome, Safari) Scrollbar Styling */
+        .scrollable::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable::-webkit-scrollbar-thumb {
+            background-color: #7100ED; /* Thumb color */
+            border-radius: 6px; /* Rounded scrollbar */
+            border: 3px solid purple; /* Space between scrollbar and track */
+        }
+
+        .scrollable::-webkit-scrollbar-track {
+            background-color: purple; /* Track color */
+            border-radius: 6px; /* Rounded scrollbar */
+        }
+
     </style>
+<head>
+	<link rel="icon" href="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/favicon.png" sizes="128x128">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Jack</title>
+    
 </head>
-<body>
-    <img class="right-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Fish.gif" width="150" height="45" alt=""/>    
-    <img class="left-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/CoolCHICKEN.gif" width="171" height="163" alt=""/>
-    <div class="header-wrapper">
+<div class="header-wrapper">
         <header class="header">
             <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Spinning Globe">
             <div class="text">
@@ -236,41 +266,47 @@
             </nav>
         </header>
     </div>
-    
-    <div class="flying-text">Welcome to Jack's Corner!</div>
-    
+	
+	<div class="flying-text">Welcome to Jack's Corner!</div>
+	
+	
+	<body>
+		<img class="right-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Fish.gif" width="150" height="45" alt=""/>    
+		<img class="left-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/CoolCHICKEN.gif" width="171" height="163" alt=""/>
 
-<div class="about-section">
-		<h2>About Site: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/hamsterwheel.gif" alt="GIF Symbol" width="20" height="20"></h2> 
-	    <p>This site serves no purpose, infact I would call it a waste of space, bandwidth and a domain but hey it definitely looks rad, and I thank you for visiting this corner of the net (the fact you stumbled upon this page is a personal achievement)&nbsp;</p>
-	    <p>I will add to this in the future when I have cool stuff to add to it but for now this is what it is.</p>
-<h2>About Me?!: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/BouncingHamster.gif" alt="GIF Symbol" width="20" height="20"></h2>
-    <p>Wait you want to know about me… Me??!? Why! I am boring and average as fuck!!</p>
-  <p>But if you must, my name is Jack. I am also known as, Jiā kè (家), Jakku (ジャク)** and Jackie. I am from the boring land of New Zealand and that is it. Truely that is all.</p>
-  <h6>**I  don't actually know the true charactering of those nicknames.&nbsp;&nbsp;</h6>
-<form id="myForm">
-	  <p>
-		  <label for="textfield">Tell me a little about you:</label>
-		  <input type="text" name="textfield" id="textfield">
-		  <input type="submit" name="submit" id="submit" value="Submit">
-		</p>
-	  </form>
 
-  <div id="gif-container">
-    <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/cool.gif" alt="Cool GIF" width="200">
-	  <p>Wow! What REALLY!!!!!! WOW! thats cool.</p>
-  </div>
+	<div class="about-section scrollable body-content">
+			<h2>About Site: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/hamsterwheel.gif" alt="GIF Symbol" width="20" height="20"></h2> 
+			<p>This site serves no purpose, infact I would call it a waste of space, bandwidth and a domain but hey it definitely looks rad, and I thank you for visiting this corner of the net (the fact you stumbled upon this page is a personal achievement)&nbsp;</p>
+			<p>I will add to this in the future when I have cool stuff to add to it but for now this is what it is.</p>
+	<h2>About Me?!: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/BouncingHamster.gif" alt="GIF Symbol" width="20" height="20"></h2>
+		<p>Wait you want to know about me… Me??!? Why! I am boring and average as fuck!!</p>
+	  <p>But if you must, my name is Jack. I am also known as, Jiā kè (家), Jakku (ジャク)** and Jackie. I am from the boring land of New Zealand and that is it. Truely that is all.</p>
+	  <h6>**I  don't actually know the true charactering of those nicknames.&nbsp;&nbsp;</h6>
+	<form id="myForm">
+		  <p>
+			  <label for="textfield">Tell me a little about you:</label>
+			  <input type="text" name="textfield" id="textfield">
+			  <input type="submit" name="submit" id="submit" value="Submit">
+			</p>
+		  </form>
 
-  <script>
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevents the default form submission
+	  <div id="gif-container">
+		<img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/cool.gif" alt="Cool GIF" width="200">
+		  <p>Wow! What REALLY!!!!!! WOW! thats cool.</p>
+	  </div>
 
-      // Display the GIF
-      document.getElementById('gif-container').style.display = 'block';
-    });
-  </script>
+	  <script>
+		document.getElementById('myForm').addEventListener('submit', function(event) {
+		  event.preventDefault(); // Prevents the default form submission
+
+		  // Display the GIF
+		  document.getElementById('gif-container').style.display = 'block';
+		});
+	  </script>
+	</div>
 </div>
-
+	
 <footer class="footer">
         <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
         <div class="made-in-nz">

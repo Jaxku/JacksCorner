@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<link rel="icon" href="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/favicon.png" sizes="128x128">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Jack</title>
-    <style>
+<style>
         body {
             margin: 0;
             padding: 0;
@@ -29,15 +22,21 @@
             padding: 20px;
             box-sizing: border-box;
             z-index: 2;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
+			background: transparent;
         }
+		
+		.body-content {
+ 		 margin-top: 50px;
+		}
 
         .header {
             display: flex;
             align-items: center;
             padding: 10px;
+			background: transparent;
         }
 
         .header img {
@@ -212,57 +211,30 @@
             color: lightyellow;
         }
 
+        /* Internal CSS for Scrollable Section */
+        .scrollable {
+            overflow-y: auto; /* Only vertical scroll */
+            max-height: 500px; /* Limits the height but allows content to grow until this limit */
+            padding-right: 15px; /* Adds padding to avoid content overlapping with the scrollbar */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle inner shadow for better visual distinction */
+            scrollbar-width: thin; /* Firefox scrollbar width */
+            scrollbar-color: #7100ED purple; /* Custom scrollbar colors for Firefox */
+        }
+
+        /* Webkit Browsers (Chrome, Safari) Scrollbar Styling */
+        .scrollable::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable::-webkit-scrollbar-thumb {
+            background-color: #7100ED; /* Thumb color */
+            border-radius: 6px; /* Rounded scrollbar */
+            border: 3px solid purple; /* Space between scrollbar and track */
+        }
+
+        .scrollable::-webkit-scrollbar-track {
+            background-color: purple; /* Track color */
+            border-radius: 6px; /* Rounded scrollbar */
+        }
+
     </style>
-</head>
-<body>
-    <img class="right-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Fish.gif" width="150" height="45" alt=""/>    
-    <img class="left-middle" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/CoolCHICKEN.gif" width="171" height="163" alt=""/>
-    <div class="header-wrapper">
-        <header class="header">
-            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="Spinning Globe">
-            <div class="text">
-                <span>j</span><span>a</span><span>c</span><span>k</span><span>'</span><span>s</span>
-                <span> </span><span>C</span><span>o</span><span>r</span><span>n</span><span>e</span><span>r</span>
-            </div>
-            <nav>
-                <div class="credits">     </div>
-                <a href="index.html" style="color: palegreen;"> Home </a>
-                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/DancingCow.gif" width=auto height=auto alt="Dancing Cow"/>
-                <a href="about.html" style="color: hotpink;"> About </a>
-                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/dancingconure.gif" width=auto height=auto alt="Dancing Birb"/>
-                <a href="contact.html" style="color: purple;"> Contact </a>
-                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/hamster2.gif" width=auto height=auto alt="Spinning hamster"/>
-                <img class="right-banner" src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/seagull.gif" width=auto height=auto alt="Crazy Seagull Flying"/>
-            </nav>
-        </header>
-    </div>
-    
-    <div class="flying-text">Welcome to Jack's Corner!</div>
-    
-
-<div class="about-section">
-		<h2>Contact Me: <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Assets/Rats/SpinningAnimal.gif" alt="GIF Symbol" width="20" height="20"></h6></h2>
-  <p>No, don't contact me. :) </p>
-	    <p>But if you must: <a href="mailto:jack@jackpercy.com">jack@jackpercy.com</a>&nbsp;</p>
-  <script>
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevents the default form submission
-
-      // Display the GIF
-      document.getElementById('gif-container').style.display = 'block';
-    });
-  </script>
-</div>
-
-<footer class="footer">
-        <h6 style="font-size: 14px;">© 2024 Jack Percy. All rights reserved. <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/globe2.gif?raw=true" alt="GIF Symbol" width="20" height="20"></h6>
-        <div class="made-in-nz">
-            <span style="font-size: 12px;">Made with Love or lust... in NZ.</span>
-            <img src="https://github.com/Jaxku/JacksCorner/blob/main/Image%20Assets/Icons/NZ-FLAG.gif?raw=true" width="60" height="35" alt="NZ Symbol">
-            <a href="https://github.com/Jaxku/JacksCorner/tree/main" target="_blank">
-                <img src="https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Image%20Assets/Icons/Animated-GitHub-Logo.gif" width="60" height="auto" alt="GitHub Logo">
-            </a>
-        </div>
-    </footer>
-</body>
-</html>

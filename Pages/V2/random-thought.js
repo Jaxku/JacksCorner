@@ -1,6 +1,6 @@
 async function getRandomThought() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/YourUsername/YourRepo/main/random-thoughts.json');
+        const response = await fetch('https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Pages/V2/random-thoughts.json');
         const data = await response.json();
         const thoughts = data.thoughts;
         const randomIndex = Math.floor(Math.random() * thoughts.length);
@@ -20,7 +20,7 @@ displayRandomThought();
 
 async function displayLatestThought() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/YourUsername/YourRepo/main/random-thoughts.json');
+        const response = await fetch('https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Pages/V2/random-thoughts.json');
         const data = await response.json();
         const latestThought = data.thoughts[0];
         document.getElementById('latest-thought').textContent = latestThought;

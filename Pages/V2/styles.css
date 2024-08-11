@@ -1,29 +1,4 @@
 <style>
-		.scrollable {
-			overflow-y: auto; /* Only vertical scroll */
-			max-height: 500px; /* Limits the height but allows content to grow until this limit */
-			padding-right: 15px; /* Adds padding to avoid content overlapping with the scrollbar */
-			box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle inner shadow for better visual distinction */
-			scrollbar-width: thin; /* Firefox scrollbar width */
-			scrollbar-color: #7100ED lightyellow; /* Custom scrollbar colors for Firefox */
-		}
-
-		/* Webkit Browsers (Chrome, Safari) Scrollbar Styling */
-		.scrollable::-webkit-scrollbar {
-			width: 12px;
-		}
-
-		.scrollable::-webkit-scrollbar-thumb {
-			background-color: #7100ED; /* Thumb color */
-			border-radius: 6px; /* Rounded scrollbar */
-			border: 3px solid purple; /* Space between scrollbar and track */
-		}
-
-		.scrollable::-webkit-scrollbar-track {
-			background-color: lightyellow; /* Track color */
-			border-radius: 6px; /* Rounded scrollbar */
-		}
-
         body {
             margin: 0;
             padding: 0;
@@ -54,7 +29,7 @@
         }
 		
 		.body-content {
- 		 margin-top: 50px; /* Adjust this value based on your header height */
+ 		 margin-top: 50px;
 		}
 
         .header {
@@ -234,6 +209,32 @@
         .about-section p {
             font-size: 16px;
             color: lightyellow;
+        }
+
+        /* Internal CSS for Scrollable Section */
+        .scrollable {
+            overflow-y: auto; /* Only vertical scroll */
+            max-height: 500px; /* Limits the height but allows content to grow until this limit */
+            padding-right: 15px; /* Adds padding to avoid content overlapping with the scrollbar */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle inner shadow for better visual distinction */
+            scrollbar-width: thin; /* Firefox scrollbar width */
+            scrollbar-color: #7100ED purple; /* Custom scrollbar colors for Firefox */
+        }
+
+        /* Webkit Browsers (Chrome, Safari) Scrollbar Styling */
+        .scrollable::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable::-webkit-scrollbar-thumb {
+            background-color: #7100ED; /* Thumb color */
+            border-radius: 6px; /* Rounded scrollbar */
+            border: 3px solid purple; /* Space between scrollbar and track */
+        }
+
+        .scrollable::-webkit-scrollbar-track {
+            background-color: purple; /* Track color */
+            border-radius: 6px; /* Rounded scrollbar */
         }
 
     </style>

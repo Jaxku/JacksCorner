@@ -2,12 +2,12 @@ async function getRandomThought() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Pages/V2/random-thoughts.json');
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
         const thoughts = data.thoughts;
-        if (thoughts.length === 0) {
-            throw new Error('No thoughts found in JSON');
+        if (!Array.isArray(thoughts) || thoughts.length === 0) {
+            throw new Error('No thoughts found or thoughts is not an array.');
         }
         const randomIndex = Math.floor(Math.random() * thoughts.length);
         return thoughts[randomIndex];
@@ -26,12 +26,12 @@ async function displayLatestThought() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/Jaxku/JacksCorner/main/Pages/V2/random-thoughts.json');
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
         const latestThought = data.thoughts[0];
         if (!latestThought) {
-            throw new Error('No latest thought found in JSON');
+            throw new Error('No latest thought found.');
         }
         document.getElementById('latest-thought').textContent = latestThought;
     } catch (error) {

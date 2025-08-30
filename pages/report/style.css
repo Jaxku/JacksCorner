@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+font-family: Helvetica, Arial, sans-serif;
+background-color: #1c1c1c; /* dark background */
+color: #fff; /* white text */
+line-height: 1.6;
+}
+.container {
+max-width: 900px;
+margin: 40px auto;
+padding: 20px;
+}
+h1, h2, h3 {
+color: #f1f1f1;
+margin-top: 1.5rem;
+}
+.screenshot {
+max-width: 100%;
+border-radius: 6px;
+margin-bottom: 1rem;
+border: 1px solid #444;
+}
+table {
+color: #fff;
+}
+table th, table td {
+border-color: #444;
+}
+footer {
+margin-top: 2rem;
+text-align: center;
+font-size: 0.9rem;
+color: #bbb;
+}
+
+hr.section-divider.thick{
+  border: 0;
+  height: 2px;
+  margin: 3rem 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.75), rgba(255,255,255,0));
+  box-shadow: 0 0 12px rgba(255,255,255,.15);
+}
+
+.subheader {
+  font-size: 1.3rem;   /* smaller than h2 */
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.screenshot {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;      /* centers the image itself */
+  border-radius: 8px;
+}
+
+.screenshot-block {
+  text-align: center;  /* centers everything inside, including text */
+  margin-bottom: 2rem;
+}
+
+.caption {
+  margin-top: 0.5rem;  /* space between image + text */
+  font-size: 0.9rem;
+  color: #bbb;         /* subtle grey */
+}
+
+/*  Expanding images */
+.screenshot {
+  width: 100%;
+  max-width: 500px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.screenshot.expanded {
+  transform: scale(2.5);
+  z-index: 999;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}

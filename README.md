@@ -1,4 +1,4 @@
-# Jack's Corner
+ # Jack's Corner
 
 ## Overview
 
@@ -6,7 +6,7 @@ Jack's Corner is a personal website created using Adobe Dreamweaver, hosted on a
 
 ## Features
 
-- **Created with Adobe Dreamweaver**: This site was designed and developed using Adobe Dreamweaver, ensuring a smooth and efficient web development experience.
+- **Created with Adobe Dreamweaver**: This site was designed and developed using Adobe Dreamweaver.
 - **Hosted on Raspberry Pi 4**: The site is hosted locally on a Raspberry Pi 4, making use of its capabilities to run a full-fledged web server.
 - **Apache Web Server**: Apache is used as the web server, configured to serve the site on HTTPS.
 - **Cloudflare DNS Protection**: Cloudflare is used as my DNS provider to mask my IP Address and protect against DDOS attacks. It is also used as an email routing service (e.g. `jack@jackpercy.com` will forward to my personal address)

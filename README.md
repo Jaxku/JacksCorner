@@ -16,7 +16,7 @@ Jack's Corner is a personal website created using Adobe Dreamweaver, hosted on a
 
 ### Usage
 - **Access the Website**:
-  - Publicly: `https://jackpercy.com`
+  - Publicly: `https://classic.jackpercy.com`
 
 - **Update Content**:
   - Push updates to the GitHub repository.
